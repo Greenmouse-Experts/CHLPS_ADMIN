@@ -9,7 +9,6 @@ import { useNavigate } from "react-router-dom";
 import axios from "axios";
 import useModal from "../hook/useModal";
 import RegisterSuccess from "../users/RegisterSuccess";
-import { useEffect } from "react";
 
 const Register = () => {
   function togglePassword(inputId) {
