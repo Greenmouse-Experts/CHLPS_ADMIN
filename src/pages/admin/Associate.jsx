@@ -6,7 +6,7 @@ import jsPDF from "jspdf";
 import "jspdf-autotable";
 import { ThreeCircles } from "react-loader-spinner";
 import AddAssociate from "../../admin/AddAssociate";
-import { BsEye, BsEyeFill, BsThreeDotsVertical } from "react-icons/bs";
+import { BsEyeFill} from "react-icons/bs";
 import useGetHook from "../../hook/useGet";
 import useModal from "../../hook/useModal";
 import ReusableModal from "../../components/ReusableModal";

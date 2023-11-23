@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from "react";
 import useGetHook from "../../hook/useGet";
-import dayjs from "dayjs";
 import { formatAsNgnMoney } from "../../services/helpers";
 import { RiSecurePaymentFill } from "react-icons/ri";
 import { FiUploadCloud } from "react-icons/fi";
@@ -11,13 +10,11 @@ import { toast } from "react-toastify";
 import { usePaystackPayment } from "react-paystack";
 
 const MembersDues = () => {
-  const { data: due, loading, refetch } = useGetHook("member/payments");
+  const { data: due, refetch } = useGetHook("member/payments");
   const [data, setData] = useState([]);
   const [selected, setSelected] = useState("");
-  const [id, setId] = useState("");
   const { Modal, setShowModal } = useModal();
   const openUpload = (item) => {
-    setId(item);
     setSelected(item);
     setShowModal(true);
   };

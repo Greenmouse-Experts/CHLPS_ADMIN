@@ -8,7 +8,7 @@ import { formatString } from '../../services/helpers'
 import ViewAnnounce from '../../admin/Announcement/ViewAnnounce'
 
 const MembersAnnoucement = () => {
-  const {data, loading} = useGetHook('member/announcements')
+  const {data} = useGetHook('member/announcements')
   const [selected, setSelected] = useState();
   const { Modal: View, setShowModal: showView } = useModal();
   const openViewAnnounce = (item) => {

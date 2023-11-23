@@ -4,7 +4,7 @@ import { formatAsNgnMoney } from '../services/helpers'
 import dayjs from 'dayjs'
 
 const ConfirmedPayments = () => {
-    const {data, loading} = useGetHook('member/payments/approved')
+    const {data} = useGetHook('member/payments/approved')
     return (
         <>
         <div className="">

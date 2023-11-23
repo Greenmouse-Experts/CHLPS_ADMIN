@@ -4,7 +4,7 @@ import { GoLock } from "react-icons/go";
 import "../stylesheet/login.css";
 import { toast } from "react-toastify";
 import { useNavigate, Link } from "react-router-dom";
-import logo from "../image/logo.png";
+// import logo from "../image/logo.png";
 import axios from "axios";
 import { AiFillEye } from "react-icons/ai";
 
@@ -85,7 +85,8 @@ const Login = () => {
   return (
     <div className="main_login">
       <form onSubmit={handleSubmit} action="submit" className="login">
-        <a href="https://bripan.org.ng/"><img src={logo} alt="logo" /></a>
+        {/* <img src={logo} alt="logo" /> */}
+        <p className="font-semibold text-center">Admitter</p>
         <div className="log_head">
           <h3>Member Login</h3>
           <p>Fill in your credentials to login to your dashboard</p>
