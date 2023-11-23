@@ -189,7 +189,7 @@ const Register = () => {
     <>
       <div className="main_log">
         <form onSubmit={handleSubmit} action="submit" className="register">
-          <img src={logo} alt="" />
+          <img src={logo} alt="" className="w-54"/>
           <div className="log_head">
             <h3>Register</h3>
             <p>Fill in your credentials to register as a Member</p>
