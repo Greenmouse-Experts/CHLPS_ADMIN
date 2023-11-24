@@ -1,12 +1,21 @@
 import React, { useState, useEffect, useRef } from "react";
 import { LuMenu } from "react-icons/lu";
 import "../stylesheet/component.css";
-import { BiSearch } from "react-icons/bi";
 import { GoBell } from "react-icons/go";
 import user from "../image/Ellipse 922.png";
 import { Link } from "react-router-dom";
 import useGetHook from "../hook/useGet";
 import { formatDistanceToNow } from "date-fns";
+import {
+  Menu,
+  MenuHandler,
+  MenuList,
+  MenuItem,
+  Button,
+} from "@material-tailwind/react";
+import { BiLogOut } from "react-icons/bi";
+import { BsGear } from "react-icons/bs";
+import Initials from "../components/initials";
 
 export const Topnav = ({ toggleSidebar, data }) => {
   const formatTimeAgo = (timestamp) => {
@@ -33,7 +42,7 @@ export const Topnav = ({ toggleSidebar, data }) => {
     "November",
     "December",
   ];
-
+  console.log(data);
   const day = currentDate.getDate();
   const month = monthNames[currentDate.getMonth()];
   const year = currentDate.getFullYear();
@@ -74,10 +83,6 @@ export const Topnav = ({ toggleSidebar, data }) => {
         </div>
       </div>
       <div className="icon_menu">
-        {/* <div className="search">
-          <BiSearch />
-          <input type="text" placeholder="Search" />
-        </div> */}
         <div ref={bellIconRef} onClick={popup} className="bell">
           <GoBell />
           <span>{datas?.data?.length}</span>
@@ -102,10 +107,6 @@ export const Topnav = ({ toggleSidebar, data }) => {
                 ))
               ) : (
                 <div>
-                  {" "}
-                  <div className="add_head">
-                    <p>Recent Notification</p>{" "}
-                  </div>{" "}
                   <p className="no_body">No Notifications</p>
                 </div>
               )}
@@ -113,7 +114,36 @@ export const Topnav = ({ toggleSidebar, data }) => {
             </div>
           )}
         </div>
-        <img src={data?.avatar || user} alt="profile" />
+        <div>
+          <Menu placement="bottom-end">
+            <MenuHandler>
+              <Button className="p-0 m-0 bg-transparent !shadow-none">
+              {data?.avatar && <img src={data?.avatar} alt="profile" className="w-20 circle"/>}
+                {!data?.avatar && <Initials name={`${data?.first_name} ${data?.last_name}`} size={45} text="19" />}
+              </Button>
+            </MenuHandler>
+            <MenuList className="p-2">
+              <MenuItem>
+                <Link
+                  to={"settings"}
+                  className="block text-gray-800 font-medium flex gap-x-1 items-center fw-500"
+                >
+                  {" "}
+                  <BsGear />
+                  Settings
+                </Link>
+              </MenuItem>
+              <MenuItem
+                className="bg-red-400 text-white font-medium flex mt-1 gap-x-1 items-center fw-500"
+                // onClick={() => setShowModal(true)}
+              >
+                <BiLogOut />
+                Logout
+              </MenuItem>
+            </MenuList>
+          </Menu>
+        </div>
+        {/* <img src={data?.avatar || user} alt="profile" /> */}
       </div>
     </div>
   );

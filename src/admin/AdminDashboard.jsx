@@ -15,6 +15,7 @@ import AdminDues from "../pages/admin/Dues/Dues";
 import DuesPayments from "../pages/admin/Payments/Dues";
 import SubscriptionPayments from "../pages/admin/Payments/Subscription";
 import SettingsPage from "../pages/admin/Settings";
+import SidebarLayout from "../components/Sidebar";
 
 const AdminDashboard = () => {
   const [showSidebar, setShowSidebar] = useState(window.innerWidth >= 650);
@@ -28,7 +29,8 @@ const AdminDashboard = () => {
   return (
     <div className="layout">
       <div className="cide">
-        <Sidenav showSidebar={showSidebar} toggleSidebar={toggleSidebar} />
+        <SidebarLayout/>
+        {/* <Sidenav showSidebar={showSidebar} toggleSidebar={toggleSidebar} /> */}
       </div>
       <div className={showSidebar ? "components" : "close-side"}>
         <div className="top_admin_nav">
@@ -45,6 +47,12 @@ const AdminDashboard = () => {
             <Route path="/" element={<Admin />} />
             <Route path="fellow" element={<Fellow />} />
             <Route path="associate" element={<Associate />} />
+            <Route path="departments" element={<></>} />
+            <Route path="chats" element={<></>} />
+            <Route path="idcard" element={<></>} />
+            <Route path="scan" element={<></>} />
+            <Route path="departments" element={<></>} />
+            <Route path="departments" element={<></>} />
             <Route path="announcements" element={<AdminAnnouncement />} />
             <Route path="notify" element={<Notify datas={data?.data} />} />
             <Route path="dues/list" element={<AdminDues/>} />

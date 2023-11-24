@@ -117,7 +117,7 @@ const Fellow = () => {
       <div className="p-6 bg-white">
         <div className="admin_head">
           <div className="leftt">
-            <h3 className="text-2xl font-semibold">Fellow Members</h3>
+            <h3 className="text-2xl font-semibold">Alumini Members</h3>
             <svg
               onClick={downloadAsPDF}
               xmlns="http://www.w3.org/2000/svg"

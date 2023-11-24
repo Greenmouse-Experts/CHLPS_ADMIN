@@ -96,7 +96,7 @@ const Admin = () => {
           {list.map((item) => (
             <div className="">
               <div className="_text">
-                <p>{item.head}</p> <h3>{item.num}</h3>{" "}
+                <p className="font-semibold">{item.head}</p> <h3>{item.num}</h3>{" "}
               </div>{" "}
               <img src={item.Image} alt="" className="w-[60px]" />
             </div>
