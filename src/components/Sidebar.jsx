@@ -11,6 +11,11 @@ const SidebarLayout = () => {
   const [expanded, setExpanded] = useState();
   const navigate = useNavigate();
   const { Modal, setShowModal } = useModal();
+  const handleExpand = (val) => {
+    if(val === expanded){
+      setExpanded('')
+    }else setExpanded(val)
+  }
   const handleLogout = () => {
     localStorage.clear();
     navigate("/admin/login");
@@ -59,12 +64,13 @@ const SidebarLayout = () => {
                 {!!item.submenu.length ? (
                   <SubMenu
                     active={false}
-                    onClick={() => setExpanded(item.name)}
+                    onClick={() => handleExpand(item.name)}
+                    open={item.name === expanded}
                     label={item.name}
                     icon={item.icon}
                     key={item.name}
                   >
-                    {item.submenu.map((item, i) => (
+                    {item.name === expanded && item.submenu.map((item, i) => (
                       <MenuItem
                         component={<Link to={item.route} />}
                         active={pathname === item.route && true}

@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import useGetHook from "../hook/useGet";
-import Sidenav from "./Sidenav";
 import { Topnav } from "./Topnav";
 import { Route, Routes } from "react-router-dom";
 import "../stylesheet/layout.css";
@@ -19,7 +18,7 @@ import SidebarLayout from "../components/Sidebar";
 
 const AdminDashboard = () => {
   const [showSidebar, setShowSidebar] = useState(window.innerWidth >= 650);
-
+  const currentYear = new Date().getFullYear();
   const toggleSidebar = () => {
     setShowSidebar(!showSidebar);
   };
@@ -62,6 +61,9 @@ const AdminDashboard = () => {
             <Route path="payments/dues" element={<DuesPayments/>} />
             <Route path="settings" element={<SettingsPage/>} />
           </Routes>
+        </div>
+        <div className="py-4 pt-8 text-center bg-[#f6f7fb]">
+        All rights reserved. Copyright © {currentYear} Admitterly
         </div>
       </div>
     </div>

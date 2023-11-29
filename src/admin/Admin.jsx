@@ -187,8 +187,9 @@ const Admin = () => {
           </div>
           <div className="w-4/12">
             <div className="bg-white px-4 py-3 border-t-[3px] border-[#FAB814] rounded-xl shadow">
-              <div className="mb-4">
-                <p className="text-lg font-semibold">Events</p>
+              <div className="mb-4 flex justify-between items-center">
+                <p className="text-lg font-semibold">Upcoming Events</p>
+                <Link to={'/admin/announcements'} className="font-medium text-[#FAB814] underline">View More</Link>
               </div>
               <div>
                 {events.map((item, i) => (
@@ -207,32 +208,8 @@ const Admin = () => {
           </div>
         </div>
         <div className="mt-8 gap-x-5 flex">
-          <div className="w-8/12">
-            <div className="bg-white px-4 py-3 border-t-[3px] border-[#FAB814] rounded-xl shadow">
-              <div className="mb-4">
-                <p className="text-lg font-semibold">Dues Payments</p>
-              </div>
-              <div className="h-[300px]">
-                {user && <DuesPayment data={user?.data?.usersPayments} />}
-              </div>
-            </div>
-          </div>
-          <div className="w-4/12">
-            <div className="bg-white px-4 py-3 border-t-[3px] border-[#FAB814] rounded-xl shadow">
-              <div className="mb-4">
-                <p className="text-lg font-semibold">Members Chart</p>
-              </div>
-              <div className="h-[300px]">
-                {user && (
-                  <MembersJoined data={user?.data?.monthly_members_joined} />
-                )}
-              </div>
-            </div>
-          </div>
-        </div>
-        <div className="mt-8 gap-x-5 flex">
           <div className="w-3/12">
-            <div className="bg-[#FAB814] relative border-[3px] border-white py-6 px-5 rounded-xl hover:scale-105 duration-100 shadow">
+            <div className="bg-[#FAB814] h-[236px] flex items-center relative border-[3px] border-white py-6 px-5 rounded-xl hover:scale-105 duration-100 shadow">
               <div className="relative z-10">
                 <p className="font-medium mb-4 text-center">
                   Boost Interactions with your members by exploring the
@@ -267,6 +244,30 @@ const Admin = () => {
                     </div>
                   ))
                 }
+              </div>
+            </div>
+          </div>
+        </div>
+        <div className="mt-8 gap-x-5 flex">
+          <div className="w-8/12">
+            <div className="bg-white px-4 py-3 border-t-[3px] border-[#FAB814] rounded-xl shadow">
+              <div className="mb-4">
+                <p className="text-lg font-semibold">Dues Payments</p>
+              </div>
+              <div className="h-[300px]">
+                {user && <DuesPayment data={user?.data?.usersPayments} />}
+              </div>
+            </div>
+          </div>
+          <div className="w-4/12">
+            <div className="bg-white px-4 py-3 border-t-[3px] border-[#FAB814] rounded-xl shadow">
+              <div className="mb-4">
+                <p className="text-lg font-semibold">Members Chart</p>
+              </div>
+              <div className="h-[300px]">
+                {user && (
+                  <MembersJoined data={user?.data?.monthly_members_joined} />
+                )}
               </div>
             </div>
           </div>

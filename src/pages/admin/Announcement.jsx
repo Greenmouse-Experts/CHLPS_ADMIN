@@ -62,7 +62,7 @@ const AdminAnnouncement = () => {
         </div>
         <div className="pt-10 px-3 grid gap-y-4">
           {data &&
-            data?.data.length &&
+            !!data?.data.length &&
             data.data.map((item, i) => (
               <div
                 className="shadow w-full flex items-center justify-between hover:scale-105 duration-100 cursor-pointer"
