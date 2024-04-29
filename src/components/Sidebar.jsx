@@ -18,7 +18,7 @@ const SidebarLayout = () => {
   }
   const handleLogout = () => {
     localStorage.clear();
-    navigate("/admin/login");
+    navigate("/");
   };
   return (
     <div className="left-0 top-0  overflow-hidden fixed index-30 h-screen bg-white">
