@@ -239,7 +239,10 @@ td {
     flex-wrap: wrap;
     justify-content: center;
   }
-
+  .components{
+    width: 100%;
+    margin-left: 0px;
+  }
   .top_right img {
     display: none;
   }

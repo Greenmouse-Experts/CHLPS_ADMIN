@@ -14,7 +14,7 @@ export const formatString = (string, number) => {
 
 export const formatAsNgnMoney = (value) => {
   if (!value) return "";
-  return `₦${value
+  return `$${value
     .toLocaleString("en-US")
     .replace(/\B(?=(\d{3})+(?!\d))/g, ",")}`;
 };

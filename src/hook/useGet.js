@@ -10,7 +10,7 @@ const useGetHook = (url) => {
       const config = {
         headers: {
           "Content-Type": "Application/json",
-          authorization: `Bearer ${localStorage.getItem("bripan_token")}`,
+          authorization: `Bearer ${localStorage.getItem("chlps_admin_token")}`,
         },
       };
       const res = await axios.get(`${process.env.REACT_APP_API_URL}/${url}`, config);

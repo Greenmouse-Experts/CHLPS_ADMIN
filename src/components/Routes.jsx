@@ -4,7 +4,7 @@ import { GrTransaction } from 'react-icons/gr'
 import { HiOutlineArrowsExpand } from 'react-icons/hi'
 import { LuLayoutDashboard } from 'react-icons/lu'
 import {MdAnnouncement, MdMemory, MdMoveDown, MdOutlineEventAvailable, MdOutlineManageAccounts, MdOutlinePayment } from 'react-icons/md'
-import { PiChats } from "react-icons/pi";
+import { PiCertificate, PiChats } from "react-icons/pi";
 
 export const Routes = [
     {
@@ -14,45 +14,51 @@ export const Routes = [
       submenu: [],
     },
     {
-        name: "Departments",
-        icon: <HiOutlineArrowsExpand className="text-xl" />,
+        name: "Members",
+        icon: <MdOutlineManageAccounts className="text-xl" />,
         route: "departments",
         submenu: [],
       },
-    {
-        name: "Members",
-        icon: <MdOutlineManageAccounts className="text-xl" />,
-        route: "/",
-        submenu: [
-          {
-            name: "Alumini",
-            route: "fellow",
-          },
-          {
-            name: "Others",
-            route: "associate",
-          },
-        ],
-      },
       {
-        name: "Interactions",
-        icon: <PiChats className="text-2xl" />,
-        route: "/",
-        submenu: [
-          {
-            name: "Meetings",
-            route: "meetings",
-          },
-          {
-            name: "Live Chat",
-            route: "chats",
-          },
-          {
-            name: "WhatsApp Automation",
-            route: "chats",
-          },
-        ],
+        name: "Certifications",
+        icon: <PiCertificate className="text-xl" />,
+        route: "certifications",
+        submenu: [],
       },
+    // {
+    //     name: "Members",
+    //     icon: <MdOutlineManageAccounts className="text-xl" />,
+    //     route: "/",
+    //     submenu: [
+    //       {
+    //         name: "Alumini",
+    //         route: "fellow",
+    //       },
+    //       {
+    //         name: "Others",
+    //         route: "associate",
+    //       },
+    //     ],
+    //   },
+      // {
+      //   name: "Interactions",
+      //   icon: <PiChats className="text-2xl" />,
+      //   route: "/",
+      //   submenu: [
+      //     {
+      //       name: "Meetings",
+      //       route: "meetings",
+      //     },
+      //     {
+      //       name: "Live Chat",
+      //       route: "chats",
+      //     },
+      //     {
+      //       name: "WhatsApp Automation",
+      //       route: "chats",
+      //     },
+      //   ],
+      // },
       {
         name: "Events",
         icon: <MdOutlineEventAvailable className="text-xl" />,

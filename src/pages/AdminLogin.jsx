@@ -4,7 +4,7 @@ import { GoLock } from "react-icons/go";
 import "../stylesheet/login.css";
 import { toast } from "react-toastify";
 import { useNavigate } from "react-router-dom";
-import logo from "../image/logo.png";
+import logo from "../image/logo.svg";
 import axios from "axios";
 
 const AdminLogin = () => {
@@ -40,7 +40,7 @@ const AdminLogin = () => {
           console.log(res);
           if (res.data.code === 200) {
             toast.success(res.data.message);
-            localStorage.setItem("bripan_token", res.data.token);
+            localStorage.setItem("chlps_admin_token", res.data.token);
             usenavigate("/admin/");
           } else {
             toast.error(res.data.message);
@@ -81,7 +81,7 @@ const AdminLogin = () => {
   return (
     <div className="main_login">
       <form onSubmit={handleSubmit} action="submit" className="login">
-        <img src={logo} alt="logos" className="" />
+        <img src={logo} alt="logos" className="!w-[300px]" />
         <div className="log_head">
           <h3>Admin Login</h3>
           <p>Fill in your credentials to login to the dashboard</p>

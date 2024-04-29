@@ -86,6 +86,13 @@ const Sidebar = ({ showSidebar, toggleSidebar }) => {
             </NavLink>
           </li>
           <li className="nav-item">
+            <NavLink to="/admin/fellow" className="nav-link">
+              <span className="nav-icon">
+                <LuLayoutDashboard /> {showSidebar && "Members"}
+              </span>
+            </NavLink>
+          </li>
+          {/* <li className="nav-item">
             <span className="nav-link" onClick={toggleUsersMenu}>
               <span className="nav-icon">
                 <MdOutlineManageAccounts /> {showSidebar && "Members"}
@@ -110,7 +117,7 @@ const Sidebar = ({ showSidebar, toggleSidebar }) => {
                 </li>
               </ul>
             )}
-          </li>
+          </li> */}
           <li className="nav-item">
             <span className="nav-link" onClick={toggleDuesMenu}>
               <span className="nav-icon">

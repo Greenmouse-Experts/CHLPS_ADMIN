@@ -15,6 +15,8 @@ import DuesPayments from "../pages/admin/Payments/Dues";
 import SubscriptionPayments from "../pages/admin/Payments/Subscription";
 import SettingsPage from "../pages/admin/Settings";
 import SidebarLayout from "../components/Sidebar";
+import MembersViaMembership from "../pages/admin/Member";
+import MembersCertification from "../pages/admin/Certificate";
 
 const AdminDashboard = () => {
   const [showSidebar, setShowSidebar] = useState(window.innerWidth >= 650);
@@ -31,8 +33,8 @@ const AdminDashboard = () => {
         <SidebarLayout/>
         {/* <Sidenav showSidebar={showSidebar} toggleSidebar={toggleSidebar} /> */}
       </div>
-      <div className={showSidebar ? "components" : "close-side"}>
-        <div className="top_admin_nav">
+      <div className={`${showSidebar ? "components" : "close-side"}`}>
+        <div className="top_admin_nav !hidden lg:!block">
           <Topnav
             data={data?.data}
             isLoading={isLoading}
@@ -46,8 +48,8 @@ const AdminDashboard = () => {
             <Route path="/" element={<Admin />} />
             <Route path="fellow" element={<Fellow />} />
             <Route path="associate" element={<Associate />} />
-            <Route path="departments" element={<></>} />
-            <Route path="chats" element={<></>} />
+            <Route path="departments" element={<MembersViaMembership/>} />
+            <Route path="certifications" element={<MembersCertification/>} />
             <Route path="idcard" element={<></>} />
             <Route path="scan" element={<></>} />
             <Route path="departments" element={<></>} />

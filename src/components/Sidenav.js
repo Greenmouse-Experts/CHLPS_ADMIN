@@ -3,15 +3,12 @@ import { NavLink } from "react-router-dom";
 import logo from "../image/logo.png";
 import { FiUsers, FiSettings, FiLogOut } from "react-icons/fi";
 import {
-  MdOutlineManageAccounts,
   MdAccessTime,
   MdOutlinePayment,
 } from "react-icons/md";
-// import { IoIosArrowDown, IoIosArrowUp } from "react-icons/io";
 import { LuLayoutDashboard } from "react-icons/lu";
 import "../stylesheet/component.css";
 import { AiOutlineClose } from "react-icons/ai";
-import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
 import { GoBell } from "react-icons/go";
@@ -22,11 +19,11 @@ const Sidebar = ({ showSidebar, toggleSidebar }) => {
   const [showUsersMenu, setShowUsersMenu] = useState(false);
   // const [showInventoriesMenu, setShowInventoriesMenu] = useState(false);
   const {Modal, setShowModal} = useModal()
-  const toggleUsersMenu = () => {
-    if (showSidebar) {
-      setShowUsersMenu(!showUsersMenu);
-    }
-  };
+  // const toggleUsersMenu = () => {
+  //   if (showSidebar) {
+  //     setShowUsersMenu(!showUsersMenu);
+  //   }
+  // };
 
   const Navigate = useNavigate();
 

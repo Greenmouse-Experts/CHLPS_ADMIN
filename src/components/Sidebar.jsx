@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { Menu, MenuItem, Sidebar, SubMenu } from "react-pro-sidebar";
-import logo from "../image/logo.png";
+import logo from "../image/logo.svg";
 import { Routes } from "./Routes";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import useModal from "../hook/useModal";
@@ -27,9 +27,9 @@ const SidebarLayout = () => {
         className="h-full overflow-hidden pb-4 border-none fs-700 fw-500 px-4"
         backgroundColor=""
       >
-        <div className="flex justify-center py-6 items-center">
-          <Link to="/" className="block flex gap-x-1">
-            <img src={logo} alt="logo" className="w-40" />
+        <div className="flex justify-center py-2 items-center">
+          <Link to="/" className="block gap-x-1">
+            <img src={logo} alt="logo" className="w-48" />
           </Link>
         </div>
         <Menu
@@ -64,13 +64,11 @@ const SidebarLayout = () => {
                 {!!item.submenu.length ? (
                   <SubMenu
                     active={false}
-                    onClick={() => handleExpand(item.name)}
-                    open={item.name === expanded}
                     label={item.name}
                     icon={item.icon}
                     key={item.name}
                   >
-                    {item.name === expanded && item.submenu.map((item, i) => (
+                    {item.submenu.map((item, i) => (
                       <MenuItem
                         component={<Link to={item.route} />}
                         active={pathname === item.route && true}

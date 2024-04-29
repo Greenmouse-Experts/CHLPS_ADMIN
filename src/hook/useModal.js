@@ -37,7 +37,7 @@ const useModal = () => {
       </>
     );
   };
-  return { Modal, showModal, setShowModal, setModalBusy };
+  return { Modal, showModal, setShowModal, setModalBusy, modalBusy };
 };
 
 export default useModal;
