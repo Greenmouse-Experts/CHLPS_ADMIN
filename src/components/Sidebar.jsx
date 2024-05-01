@@ -11,11 +11,11 @@ const SidebarLayout = () => {
   const [expanded, setExpanded] = useState();
   const navigate = useNavigate();
   const { Modal, setShowModal } = useModal();
-  const handleExpand = (val) => {
-    if(val === expanded){
-      setExpanded('')
-    }else setExpanded(val)
-  }
+  // const handleExpand = (val) => {
+  //   if(val === expanded){
+  //     setExpanded('')
+  //   }else setExpanded(val)
+  // }
   const handleLogout = () => {
     localStorage.clear();
     navigate("/");
