@@ -20,7 +20,7 @@ const MemberModal = ({ item, close }) => {
             </p>
             <FaTimes onClick={close} className="" />
           </div>
-          {!data && <p className="py-12 text-center">Loading....</p>}
+          {!data && loading && <p className="py-12 text-center">Loading....</p>}
           <div className="oveflow-y-auto px-3">
             {data && (
               <div className="grid lg:grid-cols-2 gap-y-2 py-3 overflow-y-auto pr-3">
@@ -82,7 +82,7 @@ const MemberModal = ({ item, close }) => {
                 </div>
                 <div>
                   <p className="text-gray-500">Passport:</p>
-                  {item.passport && <a href={item.passport} target="_blank">
+                  {item.passport && <a href={item.passport} target="_blank" rel="noreferrer noopener">
                     <img
                       src={item.passport}
                       alt="cert"
@@ -92,7 +92,7 @@ const MemberModal = ({ item, close }) => {
                 </div>
                 <div>
                   <p className="text-gray-500">Certificates:</p>
-                  {item.certificates && <a href={item.certificates} target="_blank">
+                  {item.certificates && <a href={item.certificates} target="_blank" rel="noreferrer noopener">
                     <img
                       src={item.certificates}
                       alt="cert"
