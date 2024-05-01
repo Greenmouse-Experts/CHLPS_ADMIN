@@ -48,7 +48,7 @@ const EditAnnounce = ({item, refetch, close}) => {
           />
         </div>
         <div className="mt-4">
-          <img src={item.image} alt="announce-image" className='w-24' />
+          <img src={item.image} alt="announce" className='w-24' />
           <label className="text-lg font-medium w-full">Image Cover</label>
           <input
             type="file"
