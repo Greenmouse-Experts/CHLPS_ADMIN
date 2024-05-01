@@ -8,7 +8,7 @@ import { FiLogOut } from "react-icons/fi";
 
 const SidebarLayout = () => {
   const { pathname } = useLocation();
-  const [expanded, setExpanded] = useState();
+  // const [expanded, setExpanded] = useState();
   const navigate = useNavigate();
   const { Modal, setShowModal } = useModal();
   // const handleExpand = (val) => {
