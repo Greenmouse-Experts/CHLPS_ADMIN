@@ -1,10 +1,8 @@
 import { FiSettings } from 'react-icons/fi'
 import { GoBell } from 'react-icons/go'
-import { GrTransaction } from 'react-icons/gr'
-import { HiOutlineArrowsExpand } from 'react-icons/hi'
 import { LuLayoutDashboard } from 'react-icons/lu'
 import {MdAnnouncement, MdMemory, MdMoveDown, MdOutlineEventAvailable, MdOutlineManageAccounts, MdOutlinePayment } from 'react-icons/md'
-import { PiCertificate, PiChats } from "react-icons/pi";
+import { PiCertificate } from "react-icons/pi";
 
 export const Routes = [
     {
