@@ -10,7 +10,6 @@ import {
 } from "@material-tailwind/react";
 import { BsArrowsExpand, BsThreeDotsVertical } from "react-icons/bs";
 import { RiDeleteBinLine } from "react-icons/ri";
-import { useNavigate } from "react-router-dom";
 import dayjs from "dayjs";
 import { BiEdit } from "react-icons/bi";
 import { formatAsNgnMoney } from "../../services/helpers";
@@ -19,7 +18,6 @@ import useModal from "../../hook/useModal";
 import EditCertification from "./EditCertification";
 
 const CertificationList = ({ isLoading, data, refetch }) => {
-  const navigate = useNavigate();
   const {Modal:Edit, setShowModal:ShowEdit} = useModal()
   const [selectedItem, setSelectedItem] = useState()
   const handleOpenEdit = (item) => {
