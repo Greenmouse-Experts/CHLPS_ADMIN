@@ -2,7 +2,6 @@ import React, { useState, useEffect, useRef } from "react";
 import { LuMenu } from "react-icons/lu";
 import "../stylesheet/component.css";
 import { GoBell } from "react-icons/go";
-import user from "../image/Ellipse 922.png";
 import { Link } from "react-router-dom";
 import useGetHook from "../hook/useGet";
 import { formatDistanceToNow } from "date-fns";
@@ -70,6 +69,7 @@ export const Topnav = ({ toggleSidebar, data }) => {
     return () => {
       document.removeEventListener("click", handleClickOutside);
     };
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
   return (
     <div className="top_nav">
@@ -91,7 +91,7 @@ export const Topnav = ({ toggleSidebar, data }) => {
               <div className="add_head">
                 <p>Recent Notification</p>{" "}
               </div>
-              {datas?.data.length > 0 ? (
+              {!isLoading && datas?.data.length > 0 ? (
                 datas.data.map((item) => (
                   <div key={item.id}>
                     <div className="bell_body">
