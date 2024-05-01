@@ -14,6 +14,7 @@ const usePostRead = () => {
             },
           };
           const res = await axios(config);
+        console.log(res)
           success()
         } catch (error) {
             Object.entries(error.response.data.errors).forEach(([key, value]) => {
