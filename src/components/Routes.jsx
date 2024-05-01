@@ -3,6 +3,7 @@ import { GoBell } from 'react-icons/go'
 import { LuLayoutDashboard } from 'react-icons/lu'
 import {MdAnnouncement, MdMemory, MdMoveDown, MdOutlineEventAvailable, MdOutlineManageAccounts, MdOutlinePayment } from 'react-icons/md'
 import { PiCertificate } from "react-icons/pi";
+import { GrTransaction } from "react-icons/gr";
 
 export const Routes = [
     {
