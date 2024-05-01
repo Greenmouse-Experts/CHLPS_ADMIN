@@ -13,7 +13,7 @@ import DuesPayment from "./charts/duesPayment";
 
 const Admin = () => {
   const currentYear = new Date().getFullYear();
-  const { data: user, refetch } = useGetHook(
+  const { data: user } = useGetHook(
     `admin/dashboard?year=${currentYear}`
   );
 
@@ -60,24 +60,6 @@ const Admin = () => {
     {
       name: "Professional Showcase",
       img: "https://smedigest.com.ng/wp-content/uploads/2017/05/event-in-niigeria-make-money.jpg",
-    },
-  ];
-  const routes = [
-    {
-      name: "Add Member",
-      route: "fellow",
-    },
-    {
-      name: "Add New Dues",
-      route: "/admin/payments/dues",
-    },
-    {
-      name: "Monitor Savings Channel",
-      route: "/admin/payments/dues",
-    },
-    {
-      name: "Create Meetings",
-      route: "/admin/payments/dues",
     },
   ];
   const channels = [
