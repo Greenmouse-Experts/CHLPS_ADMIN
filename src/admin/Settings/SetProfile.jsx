@@ -35,6 +35,7 @@ const ProfileSettings = () => {
       onSuccess
     );
   };
+  console.log(loading)
   return (
     <>
       <div className="border border-[#E8EAED] rounded-[15px] p-6 flex items-center justify-between">
