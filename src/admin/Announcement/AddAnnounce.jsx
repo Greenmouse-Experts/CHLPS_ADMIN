@@ -16,6 +16,7 @@ const AddAnnounce = ({close, refetch}) => {
   const onSuccess = () => {
     setLoading(false)
     refetch()
+    console.log(image);
     toast.success('Announcement added successfully')
     close()
   }

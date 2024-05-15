@@ -15,6 +15,7 @@ const EditAnnounce = ({item, refetch, close}) => {
   const { handlePost } = usePostHook();
   const onSuccess = () => {
     setLoading(false)
+    console.log(image);
     refetch()
     toast.success('Announcement added successfully')
     close()
