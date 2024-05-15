@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 import usePostHook from "../../hook/usePost";
 import { toast } from "react-toastify";
+import ReactQuill from 'react-quill';
+import 'react-quill/dist/quill.snow.css';
 
 const AddAnnounce = ({close, refetch}) => {
   const [loading, setLoading] = useState(false)
@@ -19,11 +21,11 @@ const AddAnnounce = ({close, refetch}) => {
   }
   const handleSubmit = async () => {
     setLoading(true)
-    const fd = new FormData();
-    fd.append("title", title);
-    fd.append("content", body);
-    fd.append("image", image);
-    handlePost(`admin/announcements/post`, fd, `multipart/form-data`, onSuccess)
+   const payload = {
+    title: title,
+    message: body,
+   }
+    handlePost(`admin/blogs`, payload, `application/json`, onSuccess)
   };
   return (
     <>
@@ -37,10 +39,13 @@ const AddAnnounce = ({close, refetch}) => {
         </div>
         <div className="mt-4">
           <label className="text-lg font-medium">Body</label>
-          <textarea
+          <div className="pb-7">
+          <ReactQuill theme="snow" value={body} onChange={setBody} className="h-44" />;
+          </div>
+          {/* <textarea
             className="border border-gray-400 w-full h-24 mt-2 p-2 rounded"
             onChange={(e) => setBody(e.target.value)}
-          />
+          /> */}
         </div>
         <div className="mt-4">
           <label className="text-lg font-medium w-full">Image Cover</label>

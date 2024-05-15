@@ -16,7 +16,7 @@ import { toast } from "react-toastify";
 const AdminAnnouncement = () => {
   const [selected, setSelected] = useState();
   const [isBusy, setIsBusy] = useState(false)
-  const { data, loading, refetch } = useGetHook("admin/announcements");
+  const { data, loading, refetch } = useGetHook("blogs");
   const {handlePost} = usePostHook()
   const { Modal, setShowModal } = useModal();
   const { Modal: Delete, setShowModal: showDelete } = useModal();
@@ -43,21 +43,21 @@ const AdminAnnouncement = () => {
   const handleDelete = () => {
     setIsBusy(true)
     const payload = {
-      announcement_id: selected.id
+      id: selected.id
     }
-    handlePost(`admin/announcements/delete`, payload, `application/json`, onSuccess)
+    handlePost(`admin/blogs/delete`, payload, `application/json`, onSuccess)
   }
   return (
     <>
       <div className="p-6 bg-white min-h-screen m-2">
         <div className="flex items-center justify-between px-4">
-          <p className="text-2xl font-semibold">Announcements</p>
+          <p className="text-2xl font-semibold">Blog</p>
           <button
             className="flex items-center  gap-x-2 p-2 px-4 text-blue-900 font-semibold border border-blue-900 rounded"
             onClick={() => setShowModal(true)}
           >
             <MdAddCircleOutline />
-            Add
+            Add Blog
           </button>
         </div>
         <div className="pt-10 px-3 grid gap-y-4">
@@ -73,7 +73,7 @@ const AdminAnnouncement = () => {
                   <div className="bg-blue-900 py-3 px-4">
                     <TfiAnnouncement className="text-2xl text-white" />
                   </div>
-                  <p className="py-2">{formatString(item.content, 60)}</p>
+                  <p className="py-2">{formatString(item.title, 60)}</p>
                 </div>
                 <div className="pr-6 flex gap-x-2" onClick={(e) => e.stopPropagation()}>
                   <p>{dayjs(item.created_at).format("ddd-DD-MM-YYYY")}</p>

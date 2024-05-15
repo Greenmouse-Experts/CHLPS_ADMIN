@@ -1,7 +1,7 @@
 import { FiSettings } from 'react-icons/fi'
 import { GoBell } from 'react-icons/go'
 import { LuLayoutDashboard } from 'react-icons/lu'
-import {MdAnnouncement, MdMemory, MdMoveDown, MdOutlineEventAvailable, MdOutlineManageAccounts, MdOutlinePayment } from 'react-icons/md'
+import {MdAnnouncement, MdMemory, MdMoveDown, MdOutlineEventAvailable, MdOutlineManageAccounts, MdOutlinePayment, MdOutlineSupportAgent } from 'react-icons/md'
 import { PiCertificate } from "react-icons/pi";
 import { GrTransaction } from "react-icons/gr";
 
@@ -112,9 +112,15 @@ export const Routes = [
         ],
       },
       {
-        name: "Announcements",
+        name: "Support Tickets",
+        icon: <MdOutlineSupportAgent className="text-xl" />,
+        route: "/admin/tickets",
+        submenu: [],
+      },
+      {
+        name: "Blog",
         icon: <MdAnnouncement className="text-xl" />,
-        route: "/admin/announcements",
+        route: "/admin/blog",
         submenu: [],
       },
       {

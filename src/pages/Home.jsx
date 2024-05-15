@@ -23,7 +23,7 @@ const Home = () => {
             {data &&
               data.data.recentFiveAnnouncement.map((item, i) => (
                 <div className="shadow-lg rounded-lg p-2" key={i}>
-                  <p className="font-[15px] font-semibold">{item.title}</p>
+                  <p className="text-[15px] font-semibold">{item.title}</p>
                   <p className="text-[13px]">
                     {formatString(item.content, 60)}
                   </p>
@@ -43,7 +43,7 @@ const Home = () => {
                   <p className="font-medium text-blue-900">{item.channel}</p>
                   <p className="font-semibold text-[17px] ">{formatAsNgnMoney(item.amount)}</p>
                 </div>
-               <p className="font-[15px] font-semibold mt-3">{item?.due?.description? item?.due?.description : "Subscription" }</p>
+               <p className="text-[15px] font-semibold mt-3">{item?.due?.description? item?.due?.description : "Subscription" }</p>
                <p className="text-[13px]">
                  {/* {formatString(item.content, 60)} */}
                </p>

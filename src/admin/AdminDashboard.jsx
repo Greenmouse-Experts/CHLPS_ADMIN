@@ -17,6 +17,7 @@ import SettingsPage from "../pages/admin/Settings";
 import SidebarLayout from "../components/Sidebar";
 import MembersViaMembership from "../pages/admin/Member";
 import MembersCertification from "../pages/admin/Certificate";
+import SupportTicket from "../pages/admin/Ticket";
 
 const AdminDashboard = () => {
   const [showSidebar, setShowSidebar] = useState(window.innerWidth >= 650);
@@ -54,7 +55,7 @@ const AdminDashboard = () => {
             <Route path="scan" element={<></>} />
             <Route path="departments" element={<></>} />
             <Route path="departments" element={<></>} />
-            <Route path="announcements" element={<AdminAnnouncement />} />
+            <Route path="blog" element={<AdminAnnouncement />} />
             <Route path="notify" element={<Notify datas={data?.data} />} />
             <Route path="dues/list" element={<AdminDues/>} />
             <Route path="dues/bank" element={<AdminBanks/>} />
@@ -62,6 +63,7 @@ const AdminDashboard = () => {
             <Route path="payments/subscrition" element={<SubscriptionPayments/>} />
             <Route path="payments/dues" element={<DuesPayments/>} />
             <Route path="settings" element={<SettingsPage/>} />
+            <Route path="tickets" element={<SupportTicket/>} />
           </Routes>
         </div>
         <div className="py-4 pt-8 text-center bg-[#f6f7fb]">

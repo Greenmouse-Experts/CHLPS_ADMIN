@@ -1,11 +1,13 @@
 import React, {useState} from 'react'
 import { toast } from 'react-toastify';
 import usePostHook from '../../hook/usePost';
+import ReactQuill from 'react-quill';
+import 'react-quill/dist/quill.snow.css';
 
 const EditAnnounce = ({item, refetch, close}) => {
   const [loading, setLoading] = useState(false)
   const [title, setTitle] = useState(item?.title || "");
-  const [body, setBody] = useState(item?.content || "");
+  const [body, setBody] = useState(item?.message || "");
   const [image, setImage] = useState();
   const handleImage = (e) => {
     setImage(e.target.files[0]);
@@ -19,14 +21,12 @@ const EditAnnounce = ({item, refetch, close}) => {
   }
   const handleSubmit = async () => {
     setLoading(true)
-    const fd = new FormData();
-    fd.append("title", title);
-    fd.append("content", body);
-    fd.append("announcement_id", item.id);
-    if(image){
-      fd.append("image", image);
-    }
-    handlePost(`admin/announcements/update`, fd, `multipart/form-data`, onSuccess)
+    const payload = {
+      title: title,
+      message: body,
+      id: item.id
+     }
+    handlePost(`admin/blogs/update`, payload, `application/json`, onSuccess)
   };
   return (
     <>
@@ -41,11 +41,9 @@ const EditAnnounce = ({item, refetch, close}) => {
         </div>
         <div className="mt-4">
           <label className="text-lg font-medium">Body</label>
-          <textarea
-            className="border border-gray-400 w-full h-24 mt-2 p-2 rounded"
-            value={body}
-            onChange={(e) => setBody(e.target.value)}
-          />
+          <div className="pb-7">
+          <ReactQuill theme="snow" value={body} onChange={setBody} className="h-44" />;
+          </div>
         </div>
         <div className="mt-4">
           <img src={item.image} alt="announce" className='w-24' />
